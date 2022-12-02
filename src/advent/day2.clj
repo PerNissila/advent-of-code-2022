@@ -44,7 +44,7 @@
 
 (defn get-move [[elf _ player]]
   (let [elf-move (get move-map-pt1 elf)]
-    [(get move-map-pt1 elf) (case player
+    [elf-move (case player
                               \X (get winning-moves elf-move)
                               \Y elf-move
                               \Z (get losing-moves elf-move))]))

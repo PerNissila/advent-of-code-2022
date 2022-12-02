@@ -42,7 +42,7 @@
 (def losing-moves (map-invert winning-moves))
 (def pt2-input (str/split-lines (get-input 2)))
 
-(defn get-moves [[elf _ player]]
+(defn get-move [[elf _ player]]
   (let [elf-move (get move-map-pt1 elf)]
     [(get move-map-pt1 elf) (case player
                               \X (get winning-moves elf-move)
@@ -50,4 +50,4 @@
                               \Z (get losing-moves elf-move))]))
 
 (def pt2-result
-  (get-result (map get-moves pt2-input)))
+  (get-result (map get-move pt2-input)))

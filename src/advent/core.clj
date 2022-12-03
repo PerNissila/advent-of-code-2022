@@ -3,9 +3,13 @@
             [clojure.string :as str]))
 
 
-(defn get-input [day]
-  (let [file (io/resource (str (format "%02d" day) ".txt"))
-        input (slurp file)]
-    input))
+(defn get-input
+  ([day split-pattern]
+   (let [file (io/resource (str (format "%02d" day) ".txt"))
+         input (slurp file)]
+     (if split-pattern
+       (str/split input split-pattern)
+       input)))
+  ([day] (get-input day nil)))
 
 

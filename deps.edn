@@ -1,4 +1,4 @@
 {:paths ["src" "assets"]
- 
+ :deps {}
  :aliases {:advent {:main-opts ["-m" "advent.core"]}
            }}

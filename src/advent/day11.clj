@@ -86,3 +86,6 @@
 
 (def pt1 (play 20 #(quot % 3) input))
 
+(def pt2
+  (let [denom (reduce * (map :test input))]
+    (play 10000 #(rem % denom) input)))
